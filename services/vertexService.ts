@@ -1,5 +1,5 @@
 ﻿import { idb } from '../utils/idb';
-import { GoogleGenerativeAI } from "@google/generative-ai";
+
 import { getSetting } from './db';
 
 export const DEFAULT_PROMPT_TEMPLATE = `The plant is {{productHeight}}cm tall, with original pot {{potHeight}}cm. The new container is {{containerHeight}}cm tall, which is {{heightDiff}}cm taller than the original pot. Final height will be {{finalHeight}}cm.
@@ -376,4 +376,4 @@ CRITICAL: Create a photorealistic composite showing the plant naturally planted 
     }
 }
 
-export const vertexService = new VertexService();
+export const vertexService = VertexService.getInstance();

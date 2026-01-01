@@ -28,7 +28,6 @@ export const NAV_STRUCTURE: NavItem[] = [
     children: [
       { id: AppView.PRODUCT_DETAILS, view: AppView.PRODUCT_DETAILS, label: 'POS Terminal', icon: CreditCard, color: 'blue' },
       { id: AppView.ORDERS, view: AppView.ORDERS, label: 'Order Review', icon: ClipboardList, color: 'blue' },
-      { id: AppView.AI_TERMINAL, view: AppView.AI_TERMINAL, label: 'AI Terminal', icon: BrainCircuit, color: 'blue' },
     ]
   },
   {
@@ -47,44 +46,12 @@ export const NAV_STRUCTURE: NavItem[] = [
     ]
   },
   {
-    id: 'purchasing',
-    label: 'Purchasing',
-    icon: Truck,
-    color: 'orange',
-    children: [
-      { id: AppView.VENDOR_REVIEW, view: AppView.VENDOR_REVIEW, label: 'Vendor Review', icon: ClipboardList, color: 'orange' },
-      { id: AppView.PO_IMPORT, view: AppView.PO_IMPORT, label: 'PO Import', icon: Import, color: 'orange' },
-    ]
-  },
-  {
-    id: 'website',
-    label: 'Website',
-    icon: Globe,
-    color: 'green',
-    children: [
-      { id: AppView.PRODUCT_REVIEW_QUEUE, view: AppView.PRODUCT_REVIEW_QUEUE, label: 'Product Review Queue', icon: LayoutGrid, color: 'green' },
-      { id: AppView.SEO, view: AppView.SEO, label: 'SEO Dashboard', icon: LineChart, color: 'green' },
-    ]
-  },
-  {
-    id: 'studio_mkt',
-    label: 'Studio',
-    icon: Aperture,
-    color: 'pink',
-    children: [
-      { id: AppView.VCA_AGENT, view: AppView.VCA_AGENT, label: 'Visual Agent', icon: Wand2, color: 'pink' },
-      { id: AppView.CAMERA_LAB, view: AppView.CAMERA_LAB, label: 'Camera Lab', icon: Camera, color: 'pink' },
-      { id: AppView.SOCIAL_MEDIA, view: AppView.SOCIAL_MEDIA, label: 'Social Media', icon: Share2, color: 'pink' },
-    ]
-  },
-  {
     id: 'system',
     label: 'System',
     icon: Settings,
     color: 'gray',
     children: [
       { id: AppView.SETTINGS, view: AppView.SETTINGS, label: 'Settings', icon: Settings, color: 'gray' },
-      { id: AppView.AI_SETTINGS, view: AppView.AI_SETTINGS, label: 'AI Settings', icon: BrainCircuit, color: 'gray' },
     ]
   }
 ];

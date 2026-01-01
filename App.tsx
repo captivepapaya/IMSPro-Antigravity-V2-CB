@@ -29,17 +29,17 @@ import { Sparkles as SparklesIcon } from 'lucide-react'; // Rename to avoid conf
 const CsvUploader = React.lazy(() => import('./components/CsvUploader').then(module => ({ default: module.CsvUploader })));
 const InventorySearch = React.lazy(() => import('./components/InventorySearch').then(module => ({ default: module.InventorySearch })));
 const ProductScanner = React.lazy(() => import('./components/ProductScanner').then(module => ({ default: module.ProductScanner })));
-const AiTerminal = React.lazy(() => import('./components/AiTerminal').then(module => ({ default: module.AiTerminal }))); // NEW
+
 const OrdersManager = React.lazy(() => import('./components/OrdersManager').then(module => ({ default: module.OrdersManager })));
-const CameraLab = React.lazy(() => import('./components/CameraLab').then(module => ({ default: module.CameraLab })));
-const ImageVerification = React.lazy(() => import('./components/ImageVerification').then(module => ({ default: module.ImageVerification })));
+
+
 const BarcodeManager = React.lazy(() => import('./components/BarcodeManager').then(module => ({ default: module.BarcodeManager })));
-const WordPressManager = React.lazy(() => import('./components/WordPressManager').then(module => ({ default: module.WordPressManager })));
+
 const AddProduct = React.lazy(() => import('./components/AddProduct').then(module => ({ default: module.AddProduct })));
 const AddProductQueue = React.lazy(() => import('./components/AddProductQueue').then(module => ({ default: module.AddProductQueue })));
 const ManufactureHub = React.lazy(() => import('./components/ManufactureHub').then(module => ({ default: module.ManufactureHub })));
-const VCAContainer = React.lazy(() => import('./components/vca/VCAContainer').then(module => ({ default: module.VCAContainer })));
-const AISettings = React.lazy(() => import('./components/AISettings').then(module => ({ default: module.AISettings })));
+
+
 
 
 interface RemoteResource { id: string; url: string; alias: string; }
@@ -1419,20 +1419,7 @@ const App: React.FC = () => {
                                 />
                             </div>
                         )}
-                        {currentView === AppView.VENDOR_REVIEW && (
-                            <div className="h-full flex flex-col items-center justify-center text-gray-500">
-                                <Truck className="w-16 h-16 mb-4 text-blue-500 opacity-50" />
-                                <h2 className="text-2xl font-bold text-white mb-2">Vendor Review</h2>
-                                <p className="max-w-md text-center">Analyze supplier performance, review incoming product quality, and manage vendor relationships.</p>
-                            </div>
-                        )}
-                        {currentView === AppView.PO_IMPORT && (
-                            <div className="h-full flex flex-col items-center justify-center text-gray-500">
-                                <Import className="w-16 h-16 mb-4 text-green-500 opacity-50" />
-                                <h2 className="text-2xl font-bold text-white mb-2">PO Import</h2>
-                                <p className="max-w-md text-center">Upload and parse Purchase Orders (CSV/Excel) to automatically update incoming stock.</p>
-                            </div>
-                        )}
+
                         {/* ----------------------------- */}
                         {currentView === AppView.BARCODE_PRINT && (
                             <div className="h-full">
@@ -1458,16 +1445,7 @@ const App: React.FC = () => {
                                 />
                             </div>
                         )}
-                        {currentView === AppView.AI_TERMINAL && (
-                            <div className="h-full p-2">
-                                <AiTerminal
-                                    files={files}
-                                    wpConfig={wpConfig}
-                                    onAddToCart={handleAddToCartFromAI}
-                                    selectedCameraId={selectedCameraId}
-                                />
-                            </div>
-                        )}
+
                         {currentView === AppView.ORDERS && (
                             <div className="h-full">
                                 <OrdersManager
@@ -1479,34 +1457,7 @@ const App: React.FC = () => {
                                 />
                             </div>
                         )}
-                        {currentView === AppView.SEO && (
-                            <div className="h-full flex items-center justify-center text-gray-500">
-                                SEO Dashboard - Coming Soon
-                            </div>
-                        )}
-                        {currentView === AppView.SOCIAL_MEDIA && (
-                            <div className="h-full flex items-center justify-center text-gray-500">
-                                Social Media Hub - Coming Soon
-                            </div>
-                        )}
-                        {currentView === AppView.WORDPRESS && (
-                            <div className="h-full">
-                                <WordPressManager
-                                    queue={wpQueue}
-                                    setQueue={setWpQueue}
-                                    wpConfig={wpConfig}
-                                />
-                            </div>
-                        )}
-                        {currentView === AppView.PRODUCT_REVIEW_QUEUE && (
-                            <div className="h-full">
-                                <WordPressManager
-                                    queue={wpQueue}
-                                    setQueue={setWpQueue}
-                                    wpConfig={wpConfig}
-                                />
-                            </div>
-                        )}
+
                         {currentView === AppView.ADD_PRODUCT_QUEUE && (
                             <div className="h-full">
                                 <AddProductQueue
@@ -1517,13 +1468,9 @@ const App: React.FC = () => {
                                 />
                             </div>
                         )}
-                        {currentView === AppView.CAMERA_LAB && <div className="h-full"><CameraLab preferredDeviceId={selectedCameraId} /></div>}
-                        {currentView === AppView.VCA_AGENT && (
-                            <div className="h-full overflow-y-auto">
-                                <VCAContainer initialProduct={vcaInitialProduct} />
-                            </div>
-                        )}
-                        {currentView === AppView.IMAGE_CHECK && <div className="h-full"><ImageVerification files={files} /></div>}
+
+
+
                         {currentView === AppView.SETTINGS && (
                             <div className="max-w-4xl mx-auto pb-10 p-8 overflow-y-auto h-full custom-scrollbar">
                                 <div className="glass-panel p-8 rounded-2xl border border-dark-border">
@@ -1857,11 +1804,7 @@ const App: React.FC = () => {
                             </div>
                         )}
 
-                        {currentView === AppView.AI_SETTINGS && (
-                            <div className="h-full overflow-y-auto p-8 custom-scrollbar">
-                                <AISettings />
-                            </div>
-                        )}
+
                     </Suspense>
                 </div>
                 <input type="file" ref={fallbackFileInputRef} className="hidden" accept=".csv" onChange={handleFallbackFileChange} />
