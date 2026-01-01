@@ -1,0 +1,17 @@
+{
+  "name": "IMS Pro Intelligent System",
+  "short_name": "IMS Pro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1120",
+  "theme_color": "#0B1120",
+  "description": "AI-Powered Inventory Management System",
+  "icons": [
+    {
+      "src": "/app-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

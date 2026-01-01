@@ -1,0 +1,32 @@
+/* 
+ * Manufacture Hub Dropdown Fix
+ * 解决下拉框被overflow隐藏的问题
+ */
+
+/* 方案1: 移除表格容器的overflow限制 */
+.manufacture-hub-table-container {
+  overflow: visible !important;
+}
+
+.manufacture-hub-table-scroll {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+}
+
+/* 方案2: 确保下拉框在最顶层 */
+.product-code-dropdown {
+  position: fixed !important;
+  z-index: 99999 !important;
+}
+
+/* 方案3: 给Product Code单元格添加相对定位 */
+.product-code-cell {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* 方案4: 确保主内容区域允许溢出 */
+.manufacture-hub-content {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}

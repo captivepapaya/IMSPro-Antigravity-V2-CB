@@ -1,0 +1,7 @@
+{
+  "name": "IMSPro-V2",
+  "description": "Copy from Release of IMS Pro V1 R1",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
