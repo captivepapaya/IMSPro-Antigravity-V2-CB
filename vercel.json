@@ -11,6 +11,10 @@
   ],
   "rewrites": [
     {
+      "source": "/wp-api/:path*",
+      "destination": "https://lifelikeplants.au/wp-json/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

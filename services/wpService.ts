@@ -4,8 +4,8 @@ import { WordPressConfig } from '../types';
 
 // Helper function to build API base URL with proxy support
 const getApiBaseUrl = (config: WordPressConfig): string => {
-    const isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    if (isDev) {
+    // Use proxy path for main domain to avoid CORS (handled by Vite in dev, Vercel in prod)
+    if (config.url.includes('lifelikeplants.au')) {
         return '/wp-api';
     }
     return config.url.replace(/\/$/, '') + '/wp-json';
