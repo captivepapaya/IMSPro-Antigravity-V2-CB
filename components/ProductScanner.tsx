@@ -723,6 +723,18 @@ export const ProductScanner: React.FC<ProductScannerProps> = ({
         }
     };
 
+    // --- FIXED: Auto-Focus Logic for Gun Mode ---
+    // Forces focus back to the barcode input after cart operations, product selection, or closing modals
+    useEffect(() => {
+        if (scanMode === 'gun' && !activeKeypad && !captureModal.isOpen && !completedOrderModal) {
+            // Small delay to ensure React render cycle is complete and element is interactable
+            const timer = setTimeout(() => {
+                scanInputRef.current?.focus();
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    }, [scanMode, order.items.length, scannedProduct, activeKeypad, captureModal.isOpen, completedOrderModal]);
+
     useEffect(() => { if (selectedIndex >= 0 && suggestionsListRef.current) { const el = suggestionsListRef.current.children[selectedIndex] as HTMLElement; if (el) el.scrollIntoView({ block: 'nearest' }); } }, [selectedIndex]);
 
     useEffect(() => {
