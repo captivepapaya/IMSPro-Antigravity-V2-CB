@@ -48,7 +48,7 @@ interface RemoteResource { id: string; url: string; alias: string; }
 const DEFAULT_WP_CONFIG: WordPressConfig = {
     url: 'https://lifelikeplants.au/',
     username: 'mitcham@lifelikeplants.com.au',
-    appPassword: '7XsbiqSrC2j1cgQnUZIVZgo1'
+    appPassword: '0eM2 H4vl zFTz 0mWj rfVc 9uli'
 };
 
 const DEFAULT_PRINTER_CONFIG: PrinterConfig = {
